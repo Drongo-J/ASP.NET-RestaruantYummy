@@ -1,0 +1,25 @@
+﻿@model DrinksViewModel;
+@{
+    ViewData["Title"] = "Drinks";
+}
+
+<div class="container">
+  <h1 class="text-center mb-4">Our Drinks</h1>
+  <div class="row">
+        @foreach (var drink in Model.Drinks)
+        {
+                 <div class="col-md-4 mb-4">
+                     <a href="/home/drinks/@drink.Id">
+                        <div class="card p-3">
+                        <img src="@drink.ImageURL" class="img-fluid mx-auto" alt="@drink.Name">
+                        <div class="card-body">
+                            <h5 class="card-title">@drink.Name</h5>
+                            <p class="card-text">@drink.Description</p>
+                            <h6 class="card-subtitle mb-2 text-muted">Price: @drink.Price $</h6>
+                        </div>
+                         </div>
+                    </a>
+                </div>
+        }
+  </div>
+</div>

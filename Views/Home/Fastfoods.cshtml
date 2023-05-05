@@ -1,0 +1,25 @@
+﻿@model FastFoodsViewModel;
+@{
+    ViewData["Title"] = "Fast Foods";
+}
+
+<div class="container">
+  <h1 class="text-center mb-4">Our Fast Foods</h1>
+  <div class="row">
+        @foreach (var fastfood in Model.Fastfoods)
+        {
+                 <div class="col-md-4 mb-4">
+                            <a href="/home/fastfoods/@fastfood.Id">
+                        <div class="card p-3">
+                                <img src="@fastfood.ImageURL" class="img-fluid mx-auto" alt="@fastfood.Name">
+                        <div class="card-body">
+                                <h5 class="card-title">@fastfood.Name</h5>
+                                <p class="card-text">@fastfood.Description</p>
+                                <h6 class="card-subtitle mb-2 text-muted">Price: @fastfood.Price $</h6>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+        }
+  </div>
+</div>

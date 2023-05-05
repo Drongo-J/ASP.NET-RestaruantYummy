@@ -1,0 +1,17 @@
+﻿@using Yummy.Entities;
+@model Item;
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+    <div class="col-md-4 mb-4" >
+    <h1 class="text-center mb-4">@Model.Name</h1>
+       <div class="card p-3">
+                    <img src="@Model.ImageURL" class="img-fluid mx-auto" alt="@Model.Name">
+            <div class="card-body">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <p class="card-text">@Model.Description</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Price: @Model.Price $</h6>
+            </div>
+        </div>
+    </div>

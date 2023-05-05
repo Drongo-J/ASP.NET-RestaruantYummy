@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASP.NET | Task 1 | aykhan.net </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Yummy.styles.css" asp-append-version="true" />
+</head>
+<style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex-grow: 1;
+    }
+
+    footer{
+      flex-shrink: 0;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+</style>
+<body class="d-flex flex-column">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href=" "><span style="font-size: 25px;" class="fw-bold">Yummy</span><span style="color:red; font-size: 25px;" class="fw-bold">.</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=" navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav justify-content-center d-flex flex-fill">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">About</a>
+                    </li>
+                    <li class="nav-item">   
+                        <a class="nav-link" href="">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Chefs</a>
+                    </li>
+                </ul>
+                <button style="background-color:red; color:white; border-radius:20px;outline:none;border:2px solid red;" class="px-3 py-1" id="book-btn">
+                    Book a Table
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="flex-grow-1 d-flex align-items-center justify-content-center">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top footer text-muted mt-auto">
+        <div class="container p-2 text-center">
+            Copyright © Aykhan Ahmadzada 2023 - <a href="https://aykhan.net">aykhan.net<a/>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
